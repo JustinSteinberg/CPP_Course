@@ -1,0 +1,76 @@
+/**********************************************************
+* HW3: Metro Simulator
+* Comp 15 Spring 2019 
+* README
+* Author: Hayden Wolff
+* //Justin Steinberg
+*********************************************************/
+
+Compile/run: Compile using "make MetroSim", run executable with
+"./MetroSim stationsFile passFile [commands]"
+
+Program Purpose: This homework assignment handles a running train
+to accomodate passengers arriving/departing a metro. Learn how to
+design and modularize code and work with documented libraries.
+
+Acknowledgements: Ilya Yurchenko for helping me solve my MakeFile
+issues.
+
+Files: 
+main.cpp: STUDENT TO-DO: Main file should be short and handle 
+simple driver functions such as reading in files. 
+
+MetroSim.cpp: STUDENT TO-DO: Implementation of MetroSim class.
+Main functionality of running the Metro Simulation, should be
+able to move trains and deal with passengers going on/off the 
+train. 
+
+MetroSim.h: STUDENT TO-DO: Interface of MetroSim class.
+
+Station.cpp: Implementation of Station class. Allows for various
+functions related to accessing the information of the Station
+class and modifying passengers. 
+
+Station.h: Interface of Station class.
+
+stations.txt: an example file containing a list of stations.
+
+test_commands.txt: sample list of commands that you could give to
+the simulator
+
+testVectorsWithStructs.cpp: Used as a Unit Test Driver to test
+the early forms of my functions as well as feels out how 
+vectors worked
+
+Data Structures: Worked with vectors as well as structs inside 
+of vectors. I found out through much trial and error that it 
+is a real pain to try to delete certain elements in a vector 
+when you're not using a basic data type. If you start from the
+front of the vector all the elements shift to the left, causing
+you to miss an element if you are going through the vector with
+a for loop. However you can avoid the problem by starting from the
+back of the vector. Other than that they are pretty easy to use.  
+
+Testing: Here describe the following: process of testing 
+(unit tests), mention of bugs you encountered while testing,
+mention of testing on inputs of different sizes and edge
+cases, good description of base cases you considered while
+testing. Demonstrate a methodical approach to testing. This 
+section of your REAMDE should be very thorough for homework
+assignments. 
+
+For testing I created a Unit Test which unforuntaly no longer
+works. In this homework I encountered several seg faults,
+mostly when trying to loop through and delete elements in
+a vector. A big annoyance I encourted was that when I 
+wanted to delete 3 or more elements in vector (passengers at a station),
+it would either leave the middle element or the last element depending
+on my several code variations. 
+I also compared the outputs I created to the homework
+examples and they eventually matched. At this point I realize that 
+I did not create the ability to read commands in from a file but
+I hope you can sympathize with me for I am extremely tired and
+getting sick. Thank you. 
+
+Note: This homework comes partially implemented, but student must
+also create the driver and add class functionality.

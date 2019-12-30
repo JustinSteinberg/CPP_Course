@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include "Graph.h"
+#include "Actor.h"
+using namespace std;
+
+#ifdef SIXDEGREES_H_
+#define SIXDEGREES_H_
+
+class SixDegrees
+{
+public:
+
+    SixDegrees();
+    void populate_graph(); 
+    void run(istream &in, ostream &out);
+    void BFS(Actor a, Actor b, ostream &out);
+
+private:
+
+};
+
+#endif

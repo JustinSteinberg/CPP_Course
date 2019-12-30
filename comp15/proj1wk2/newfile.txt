@@ -1,0 +1,9 @@
+Output file has been changed to newfile.txt
+There are 12 nodes in the database
+TAG: No match found
+TAC removed
+There are 12 nodes in the database
+TACAGGT
+TAGTAGT
+There are 0 nodes in the database
+ACC: No match found

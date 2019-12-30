@@ -1,0 +1,28 @@
+/*********************************************************
+ * Homework 5: graph traversal
+ * Comp 15 Spring 2019 
+ * 
+ * Author: Matias Korman
+ *
+ *********************************************************/
+
+This homework assignment contains a partial implementation of Graph BFS traversal.
+
+
+main.cpp                : main driver of the project. Creates and 'run's an instance of SixDegrees 
+Graph.cpp               : graph class with extra helping tools to run DFS
+Graph.h                 : interface of graph class above
+LinkedList.cpp          : simple template linked list class used for DFS
+LinkedList.h            : interface of Linked list class above
+NodeType.h              : interface of Nodetype class (a simple struct used in the linked list class)
+Stack.cpp               : simple template stack class used for DFS
+Stack.h                 : interface of Stack class above
+Queue.cpp               : simple template queue class used for DFS
+Queue.h                 : interface of Queue class above
+actors.txt              : sample list of actors and the movies they have been in
+test_input.txt          : sample test input for the algorithm
+the_sixdegrees          : reference implementation for students to use as reference
+README                  : this file
+
+Note: the code is not complete on purpose. Students must create several files as implement some functions in Graph
+      class as well as the main driver.

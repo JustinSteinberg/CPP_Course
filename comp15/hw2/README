@@ -1,0 +1,81 @@
+/*********************************************************
+* Homework 2: Linked Lists
+* Comp 15 Spring 2019 
+* README
+* Author: Justin Steinberg
+*
+*********************************************************/
+
+Compile/run: Compile using "make train-conductor", run executable with
+"./train-conductor"
+
+Program Purpose: This homework assignment covers linked lists. The station
+class must be implemented with: a parameterized constructor, isEqual, and
+Print. The LinkedList class must also be implemented with: A standard
+destructor, insertStation, removeStation, makeEmpty, Print, and 
+getNextStation. 
+
+Acknowledgements: 
+
+Files: 
+
+train-conductor.cpp: Fully implemented driver. Opens a file, reads in
+station names, and inserts them into a linked list (along with deleting)
+a few. 
+
+LinkedList.cpp: Implementation of a standard LinkedList class. To be written 
+in this class by the student are a destructor, insertStation,
+removeStation, makeEmpty, Print, and getNextStation. 
+
+LinkedList.h: Interface of LinkedList class.
+
+NodeType.h: Small struct defining a unit of information for the LinkedList class.
+
+Station.cpp: Station class implementation to be implemented by the student.
+Write a default constructor, parameterized constructor, print, isEqual,
+getAccess, and getName.
+
+Station.h: Station class interface to be written by the student. 
+
+glx.txt: Text file of stations with Y/N accessibility.
+
+reference_all_stations.txt: Reference implementation of result printing
+the ontouched list after insertion. It will be in reverse order of insert.
+Can be used with diff to test correctness of student program. 
+
+reference_remove_some.txt: Reference implementation of result after
+removing some stations. Can be used with diff to test correctness of
+student program.
+
+Data Structures: The main data structure of this lab is a singly linked list.
+Inserting into a linked list is O(1), as an element can either be inserted
+at the head or tail. Access is O(n), because worst case the element that is
+being looked for is the last element in the list. A linked list is useful
+because it can be used dynamically and it is easy to insert and delete.
+
+*However there are disadvantages to using linked lists. The nodes must
+be read in order because they are in a sequence. They also use more
+memory than arrays because you need to use pointers to store the 
+data.
+
+Testing: Here describe the following: process of testing 
+(unit tests), mention of bugs you encountered while testing,
+mention of testing on inputs of different sizes and edge
+cases, good description of base cases you considered while
+testing. Demonstrate a methodical approach to testing. This 
+section of your REAMDE should be very thorough for homework
+assignments. 
+
+*I did not encounter any major bugs when writing this 
+homework assignment, believe it or not. Most of the errors
+I encoutnered were due to syntax which was easily fixable. 
+To test I just compared my output files to the reference
+output files. When they were off, and the only way they
+ever differed from each other for me personally was that
+the distance to the final stop was off by 1 compared to
+the reference. Also I forgot to set a node to Null so it 
+could exit the while loop I created. The program wouldn't
+finish until I figured that out since it was stuck in the
+loop. 
+
+Note: This homework comes partially implemented. 

@@ -1,0 +1,10 @@
+i TACAGGT
+i TAGTAGT
+i TAC
+i AAAAA
+r TAC
+p
+d
+pq ACC
+
+

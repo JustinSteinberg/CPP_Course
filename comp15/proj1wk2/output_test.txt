@@ -1,0 +1,10 @@
+TACAGGT inserted
+TAGTAGT inserted
+TAC inserted
+AAAAA inserted
+TAC removed 
+AAAAA
+TACAGGT
+TAGTAGT
+There are 0 nodes in the database
+ACC: No match found

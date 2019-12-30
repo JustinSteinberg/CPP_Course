@@ -1,0 +1,66 @@
+/**********************************************************
+* HW3: BinarySearchTree
+* Comp 15 Spring 2019
+* README
+* Author: 
+* //Justin Steinberg
+*********************************************************/
+
+Compile/run: Compile using "make hw4", run executable with
+"./hw4 " Compile the unit tests with "make unittests" and
+run executable with ./unittests
+
+Program Purpose: This homework assignment handles creating a binary
+tree using appropriate key invariance. We learn how to
+design and modularize code and work with documented libraries
+as well as implement post order traversing, pre order traversing,
+and recursion.
+
+Acknowledgements: Ilya Yurchenko for helping me with my unit tests.
+
+Files:
+main.cpp: Main file creates the tree using a pre-defined data set
+and goes through testing the different functions.
+
+BinarySearchTree.cpp: Implementation of the BinarySearchTree class.
+Main functionality of running the Binary Search Tree, should be
+able to insert nodes, remove nodes, copy a tree to an empty tree,
+find min and max values, find the height of the tree, and see if
+the tree contains a certain value.
+
+BinarySearchTree.h: Interface of BinarySearhTree class.
+
+pretty_print.cpp: Used as to help visualize and print the
+binary tree to the terminal.
+
+Data Structures: Worked with Binary Search Trees as well as 
+structs pointers. I found that logically going through the trees
+on paper was really helpful for umplementing my code. 
+The most difficult senario was trying to delete a node which
+had to children nodes. Going through the recursion for that
+case was kind of confusing. I was able to learn about 
+different types of traversals both with and without
+recursion as well as depth first traversals such as
+inorder, postorder, and preorder.
+
+Testing: Here describe the following: process of testing
+(unit tests), mention of bugs you encountered while testing,
+mention of testing on inputs of different sizes and edge
+cases, good description of base cases you considered while
+testing. Demonstrate a methodical approach to testing. This
+section of your REAMDE should be very thorough for homework
+assignments.
+
+For testing I created several Unit Test with the provided 
+google unit testing code which was helpful. In this homework I 
+encountered several seg faults, mostly when trying to 
+recurse through and delete nodes in the tree. 
+I also compared the outputs I created to the simulator
+provided. 
+Thank you.
+
+Note: This homework comes partially implemented, but student must
+also create the driver and add class functionality.
+
+
+

@@ -1,0 +1,57 @@
+/**********************************************************
+* Proj1wk2: THE BIOLOGISTS GREP
+* Comp 15 Spring 2019
+* README
+* Author:
+* //Justin Steinberg
+*********************************************************/
+
+Compile/run: Compile using "make SeqMatch", run executable with
+"./SeqMatch " Compile the unit tests with "make unittests" and
+run executable with ./unittests
+
+Program Purpose: This project handles creating a Trie, which is a
+tree with mutiple children, using appropriate key invariance. 
+We learn how to design and modularize code and work with documented libraries
+as well as implement post order traversing, pre order traversing,
+and recursion.
+
+
+Files:
+main.cpp: Main file creates the trie by passing in data from a file
+and goes through testing the different functions.
+
+Trie.cpp: Implementation of the Trie class.
+Main functionality of running the Trie, should be
+able to insert nodes, remove nodes, Query sequences, Prefix Query,
+find the number of nodes, delete nodes, and see if
+the trie contains a certain sequence.
+
+Trie.h: Interface of Trie class.
+
+Data Structures: Worked with Tries (reTRIEval data structure) as well as
+structs & pointers. I found that logically going through the trees
+on paper was really helpful for implementing my code.
+The most difficult senario was trying to delete a node which
+has multiple children nodes. Going through the recursion for that
+case a little confusing. I was able to learn about
+different types of traversals both with and without
+recursion as well as depth first traversals such as
+inorder, postorder, and preorder.
+
+Testing: Here describe the following: process of testing
+(unit tests), mention of bugs you encountered while testing,
+mention of testing on inputs of different sizes and edge
+cases, good description of base cases you considered while
+testing. Demonstrate a methodical approach to testing. This
+section of your REAMDE should be very thorough for homework
+assignments.
+
+For testing I created several Unit Tests with the provided
+and created new "mains" as I adapted and tested each individual
+function. In this homework I encountered several seg faults, mostly 
+when trying to recurse through and delete nodes in the trie.
+I also compared the outputs I created to the simulator
+provided.
+Thank you.
+
