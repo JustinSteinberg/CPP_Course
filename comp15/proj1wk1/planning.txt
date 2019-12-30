@@ -1,0 +1,65 @@
+Project 1 Planning
+Author: Justin Steinberg
+Comp15
+March 6th, 2019
+
+1) I want to be able to implement a trie. It seems like the most appropriate
+type of data structure for this project. A trie utilizes prefix compression
+so you can build more words off of already existing prefixes. It stories
+individual characters in individual nodes, and the connections of those
+nodes make up the word or sequence.
+
+2)There is an empty root node which contains an array of pointers 
+to each letter A,C,G,T. If you want to create/INSERT a new word, 
+you create a new node, which is a struct. The struct contains the array.
+The array contains the structs of children nodes, each element representing 
+a letter. You keep creating new nodes and insert them into the array, 
+pointing to the next pointer until the final 
+node is pointing to NULL. You set an endOfWord boolean equal to true
+which will represent the end of the word for the final letter, all of
+the othet letters are false. 
+
+For QUERY we must search through the entire trie. If the word exists then
+we returns a 100% word match. However if it does not, we compare every 
+letter in a sequence to each letter in the given sequence.
+
+If you want to REMOVE a word, you first need to check if that word already
+exists in the trie. You also need to check if the word exits as a 
+standalone word or if it exists as a prefix to another word. If the 
+sequence represents an entire branch, we can delte the nodes which 
+do not have more than one children, because no other words would be
+relying on those letters. If there is a word that exits as a prefix
+in the larger word you want to delete, you delete the nodes upto
+the end of the smaller word. If you want to delete a prefix to a 
+larger word then you simply set the EndOfWord condition of the 
+prefix equal to false. 
+
+5)I believe this is a good solution for my project because tries
+are a really efficient and compact way of storing sequences of
+letters, because you dont need to create a new branch everytime
+you want to insert a new sequence or word. You can build off of
+previously existing sequences. 
+
+4) I will be writing a TrieNode class with a struct contraing a parent 
+node, a vector of children nodes, and a boolean value. There will also be a
+insertWord function, a search for word functon, a remove word function.
+
+5) R = root; 
+   for(each character c in the key sequence) do{
+       if(c is already stored of the sub-trie){ 
+          traverse that sub-trie   
+       else{
+          create a new node for c  
+       }
+   } 
+   insert value into the leaf node
+
+6) I think the best way to recursively traverse through the trie is
+to use a preorder traversal method. First you need to process the root
+and determine if the root is associated with any string, and then
+recursively process the children array from left to right. However we 
+first go down each branch, keeping track of the number of nodes. We add up each 
+character into a string to create the word, or just store the entire word
+at the last node in the word until we reached an 
+"end of word" flag or a NULL pointer and return that word.   
+ 

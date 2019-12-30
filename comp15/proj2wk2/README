@@ -1,0 +1,65 @@
+/*********************************************************
+ * Comp 15 Project 2: grep
+ * 
+ * 
+ * Author: Justin Steinberg
+ *
+ *********************************************************/
+
+This homework assignment contains some files that can be helpful towards implementing project 2
+
+Compile/run: Compile using "make gerp", run executable with
+"./gerp [path of directory] [outfile]"
+
+Program Purpose: This project is to replicate the grep command in linux.
+
+Acknowledgements:
+
+Files:
+
+Main.cpp: Creates the FSTree Tree, the Traversal object, The HashMap,
+and the Query.
+
+FSTreeTraversal.cpp: Fully implemented driver. Opens a file, reads in
+the words in a file and puts them into a vector to be used later
+
+HashMap.h: Interface of HashMap class.
+
+HashMap.cpp: Creates the Hash Table
+
+StringProcessing.cpp: Cleans the strings 
+
+StringProcessing.h: Interface of String Processing
+
+FSTree.h		: interface of FSTree class  (used to explore file directories)
+FSTree.o		: compiled version of FSTree.cpp
+DirNode.h 		: interface of DirNode class (nodes used in FSTree)
+DirNode.o 		: compiled version of DirNode.cpp
+hashExample.cpp : an example on how to use the hash function (and compression) with STL library
+the_gerp		: compiled solution of this assignment (good for comparing purposes)
+README 			: this file
+
+DATA Structure:
+
+    Used Hash Table, tried to implement linear probing to avoid
+    collisions. Also utilized vectors to add values to keys that
+    already existed. Hash Tables are fast to search a specific key
+    using a hash function. Also utilized the HashNode which contained
+    all key/value pairs and well as the line the key appears in 
+    that file.
+
+Testing: 
+
+I went through several versions of my program. I created unit test
+starting with an integer version of my hash table thanks to the
+template implementation of my hash table. I then tested with small
+test files and directories. 
+
+The most difficult error I encountered was that during my string 
+processing I was adding a newline to the end of the string.
+So when I went to look up the index of the key, I could never find
+it because all of the strings in my hash table had an extra new line
+at the end. I was at office hours for a while trying to fix this.
+
+I know I was not able to handle case sensitive/insenitive inputs due to
+time contraints. :( 

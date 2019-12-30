@@ -1,0 +1,167 @@
+#include <bits/stdc++.h>
+#include "HashNode.h"
+#include "HashMap.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+template<typename K, typename V>
+HashMap<K,V>::HashMap(){
+
+    capacity = 10,000; 
+    size = 0;
+    arr = new HashNode<K,V>*[capacity];
+    
+    for(int i = 0; i < capacity; i++){
+        arr[i] = NULL;
+    }
+    
+    dummie = new HashNode<K,V>("","");
+}
+
+template<typename K, typename V>        
+int HashMap<K,V>::HashCode(K key){
+    unsigned int value = 0;
+    for(int i = 0; i < key.length(); i++){
+        value = 37*value + key[i];
+    }
+
+    return value % capacity;
+}
+
+//template<typename K, typename V)
+//int HashMap<K,V>::FindIndex(K key, bool over_ride = true){
+  //  int h = HashCode(key), offset = 0, Index;
+
+    //while(offset < capacity){
+      //  index = (h + offset) % capacity;  
+        
+
+template<typename K, typename V>
+void HashMap<K,V>::InsertNode(K key, V value){
+
+ //   cout << "Before HashCode " << endl;
+
+    int Index = HashCode(key);
+
+ //   cout << "Got The Index " << Index << endl;
+
+    if(arr[Index] != NULL && arr[Index]->key == key){
+        cout << "Before Pushing Value to Vector In node" << endkl; 
+        arr[Index]->values.push_back(value);
+        cout << "Pushed Values to Vector in Node " << endl;
+    }
+
+    else{
+
+   //     cout << "In the else statement " << endl;
+
+        HashNode<K,V> * temp = new HashNode<K,V>(key, value);
+
+     //   cout << "Made Temp Node" << endl;
+
+        while(arr[Index] != NULL && arr[Index]->key != key && arr[Index]->key != "")
+        {
+            Index++;
+            Index %= capacity;
+        }
+
+       // cout << "Got through the while loop " << endl;
+
+        if(arr[Index] == NULL || arr[Index]->key == ""){
+            size++;
+        }
+    
+        //cout << "Adding to arr " << endl;
+
+        arr[Index] = temp;
+   
+        //cout << "Added to arr " << endl;
+
+    } 
+
+}
+
+template<typename K, typename V>
+V HashMap<K,V>::DeleteNode(K key){
+
+    int Index = HashCode(key);
+    
+    if(arr[Index]->key == key && arr[Index]->values.size() > 1){
+        arr[Index]->values.pop_back();
+        return arr[Index]->value;
+    }
+
+    else{
+        while(arr[Index] != NULL)
+        {
+            if(arr[Index]->key == key)
+            {
+                HashNode<K,V> *temp = arr[Index];
+                arr[Index] = dummie;
+                size--;
+                return temp->value;
+            }
+            Index++;
+            Index %= capacity;
+        }
+
+    return "";   //if it wasnt found return null
+
+    }
+
+}
+
+
+template<typename K, typename V>
+V HashMap<K,V>::get(K key){
+
+    int Index = HashCode(key);
+    int count = 0;
+
+    while(arr[Index] != NULL)
+    {
+        if(count++>capacity){
+            return "";
+        }
+        if(arr[Index]->key == key){
+            return arr[Index]->value;
+        }
+        Index++;
+        Index %= capacity;
+    }
+
+    return "Not in Table";
+
+}
+ 
+template<typename K, typename V>
+int HashMap<K,V>::sizeofMap(){
+    
+    return size;
+
+}
+
+template<typename K, typename V>
+bool HashMap<K,V>::isEmpty(){
+
+    return size == 0;
+
+}
+
+template<typename K, typename V>
+void HashMap<K,V>::display(){
+
+    for(int i = 0; i < capacity; i++){
+        if(arr[i] != NULL && arr[i]->key != ""){
+            cout << "key = " << arr[i]->key << " value = " << arr[i]->value <<endl;
+        }
+    }
+
+}
+
+//template class HashMap<int, int>;
+//template class HashMap<double, double>;
+template class HashMap<string, string>;
+//template class HashMap<string, int>;

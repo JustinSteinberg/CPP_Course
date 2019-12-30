@@ -1,0 +1,24 @@
+Project 1 Planning
+Justin Steinberg
+
+1) I want to be able to implement a trie. It seems like the most appropriate
+type of data structure for this project. A trie utilizes prefix compression
+so you can build more words off of already existing prefixes.
+
+2)There is an empty root node which contains an array of pointers 
+to each letter A,C,G,T. If you want to create a new word, you create a new node
+which is a struct, and have the appropriate element in the array as that
+struct. You keep creating new nodes to the next pointer until the final 
+node is pointing to NULL. You set an endOfWord boolean equal to true
+which will represent the end of the word. 
+
+If you want to remove a word, you first need to check if that word already
+exists in the trie. You also need to check if the word exits as a 
+standalone word or if it exists as a prefix to another word. If the 
+sequence represents an entire branch, we can delte the nodes which 
+do not have more than one children, because no other words would be
+relying on those letters. If there is a word that exits as a prefix
+in the larger word you want to delete, you delete the nodes upto
+the end of the smaller word. If you want to delete a prefix to a 
+larger word then you simply set the EndOfWord condition of the 
+prefix equal to false. 
